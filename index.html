@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>自动轮播图</title>
+  <link rel="stylesheet" href="./icofont.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .carousel {
+      position: relative;
+      width: 500px;
+      height: 400px;
+      margin: 30px auto;
+      overflow: hidden;
+      background-color: #999;
+    }
+
+    .carousel ul,
+    .carousel li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .carousel ul>li>a {
+      text-decoration: none;
+    }
+    .carousel .images>li {
+      position: absolute;
+      opacity: 0;
+      /* width: 300px;
+      height: 200px;
+      margin: 10px 10px; */
+    }
+
+    .carousel .images>li.active {
+      opacity: 1;
+    }
+    .carousel .arrow {
+      position: absolute;
+      top: 50%;
+      margin-top: -20px;
+      width: 40px;
+      height: 40px;
+      border: 0px;
+      font-size: 30px;
+      cursor: pointer;
+      opacity: .5;
+    }
+    .carousel .arrow:hover {
+      opacity: 1;
+      transition: .5s;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .carousel .prev {
+      border-top-right-radius: 50%;
+      border-bottom-right-radius: 50%;
+      left: -8px;
+    }
+    .carousel .next {
+      border-top-left-radius: 50%;
+      border-bottom-left-radius: 50%;
+      right: -8px;
+    }
+
+    .carousel .bullet {
+      position: absolute;
+      /* left: 50%;
+      margin-left: -100px;
+      width: 200px;
+      height: 30px;
+      bottom: 10px;
+      background-color: red; */
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      user-select: none;/* 阻止浏览器默认行为「选择文本」 */
+    }
+
+    .carousel .bullet>li {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.4);
+      margin-left: 5px;
+    }
+    /* .carousel .bullet>li:hover, */
+    .carousel .bullet>li.active {
+      background-color: #fff;
+      transition: .5s;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+  </style>
+</head>
+<body>
+<div class="carousel">
+  <ul class="images">
+    <li class="active"><a href=""><img src="http://via.placeholder.com/500x400/blue" alt=""></a></li>
+    <li><a href=""><img src="http://via.placeholder.com/500x400/grayblue" alt=""></a></li>
+    <li><a href=""><img src="http://via.placeholder.com/500x400/redbule" alt=""></a></li>
+    <li><a href=""><img src="http://via.placeholder.com/500x400/whiteblue" alt=""></a></li>
+  </ul>
+  <button class="arrow prev">
+    <i class="icofont-rounded-left"></i>
+  </button>
+  <button class="arrow next">
+    <i class="icofont-rounded-right"></i>
+  </button>
+  <ul class="bullet">
+    <li class="active"></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>
+<script src="./index.js"></script>
+</body>
+</html>
